@@ -41,6 +41,11 @@ set.seed(4567367)
 ames_set <-
   parameters(ames_wflow) %>%
   update(id = "neighbors", neighbors(c(1, 50)))
+# -------------------------------------------
+ames_wflow %>%
+  param_set() %>%
+  update("neighbors" = neighbors(c(1,50)))
+# ------------------------------------------
 
 ames_grid <-
   ames_set %>%
